@@ -139,7 +139,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
 
     case WM_PAINT:          //출력에 관한 모든 것을 담당한다(문자,그림,도형 등등 화면에 보이는 모든 것)
         hdc = BeginPaint(hwnd, &ps);
-        DrawRectMake(hdc, _rc1);
         wsprintf(strPT, "(%-10d, %-10d)", _ptMouse.x, _ptMouse.y);
         TextOut(hdc, 10, 10, strPT, strlen(strPT));
         //이곳에 출력에 관한 코딩을 하면 된다.
@@ -161,10 +160,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
 
     case WM_MOUSEMOVE:
         _ptMouse.x = LOWORD(lparam);
-        _ptMouse.y = LOWORD(lparam);
+        _ptMouse.y = HIWORD(lparam);
         InvalidateRect(hwnd, NULL, false);
 
     case WM_LBUTTONDOWN:    //좌클릭발생
+        break;
+
+    case WM_LBUTTONUP:
         break;
         
     case WM_RBUTTONDOWN:    //우클릭 발생 
