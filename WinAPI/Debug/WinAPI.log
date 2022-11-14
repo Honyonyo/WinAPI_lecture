@@ -1,0 +1,5 @@
+﻿  WinMain.cpp
+C:\Users\KGA_05\Desktop\강유진\WinAPI\WinMain.cpp(62,40): error C2440: '초기화 중': 'const wchar_t [12]'에서 'LPTSTR'(으)로 변환할 수 없습니다.
+C:\Users\KGA_05\Desktop\강유진\WinAPI\WinMain.cpp(62,19): message : 문자열 리터럴로부터의 변환은 const 한정자가 손실됩니다(/Zc:strictStrings 참조).
+C:\Users\KGA_05\Desktop\강유진\WinAPI\WinMain.cpp(63,37): error C2440: '초기화 중': 'const wchar_t [12]'에서 'TCHAR *'(으)로 변환할 수 없습니다.
+C:\Users\KGA_05\Desktop\강유진\WinAPI\WinMain.cpp(63,18): message : 문자열 리터럴로부터의 변환은 const 한정자가 손실됩니다(/Zc:strictStrings 참조).
