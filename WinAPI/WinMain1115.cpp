@@ -24,7 +24,11 @@ void setWindowSize(int x, int y, int width, int height);
 삼각형의 무게중심을 마우스포인터 위치로 옮겼습니다.
 옮기면서 화면 바깥으로 비져나간 점은 화면 끝으로 옮겨주었습니다.
 혹시라도 세 점이 직선상에 위치할 경우를 대비해
-직선이 만들어진 경우, 직선이 되지 않을 때까지 한 점 좌표를 새롭게 만드는 코드를
+직선이 만들어진 경우, 직선이 되지 않을 때까지 한 점 좌표를 새롭게 만듭니다.
+
+과제2.
+얼굴 점을 따서 polygon면과 선으로 채우려고 했습니다.
+손이 느려 다 못했습니다. 주말에 마저 하도록 하겠습니다..
 
 */
 int APIENTRY WinMain(HINSTANCE hinstance, HINSTANCE hPrevInstance, LPSTR lpszCmdParam, int nCmdShow) {
@@ -103,8 +107,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 	case WM_KEYDOWN:
 		switch (wParam) {
 		case VK_ESCAPE:
-
 			PostMessage(hWnd, WM_DESTROY, 0, 0);	
+			break;
+		
+		case VK_SPACE:
+			InvalidateRect(hWnd, NULL, TRUE);
 			break;
 		}
 		break;
