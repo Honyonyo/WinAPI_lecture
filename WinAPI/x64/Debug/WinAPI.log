@@ -1,10 +1,8 @@
-﻿  Rect_.cpp
-C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Rect_.h(19,27): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Rect_.h(20,27): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  WinMain1114.cpp
-C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Rect_.h(19,27): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Rect_.h(20,27): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\WinMain1114.cpp(102,50): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\WinMain1114.cpp(113,50): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\WinMain1114.cpp(128,50): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  WinAPI.vcxproj -> C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\x64\Debug\WinAPI.exe
+﻿  WinMain1115.cpp
+C:\Users\KGA_05\Desktop\WinAPI\RandomFunction.h(48,25): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\KGA_05\Desktop\WinAPI\RandomPolygon.h(57,29): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\KGA_05\Desktop\WinAPI\RandomPolygon.h(58,30): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\KGA_05\Desktop\WinAPI\RandomPolygon.h(64,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\KGA_05\Desktop\WinAPI\RandomPolygon.h(69,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\KGA_05\Desktop\WinAPI\RandomPolygon.h(75,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  WinAPI.vcxproj -> C:\Users\KGA_05\Desktop\WinAPI\x64\Debug\WinAPI.exe

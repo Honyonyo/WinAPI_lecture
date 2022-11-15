@@ -11,15 +11,19 @@ private:
 	short count = 0;
 
 public:
-	void drag(POINT pt) {
-		click(pt);		
+	void drag(POINT pt,HDC hdc) {
+		click(pt,hdc);		
 		if (isClicked)
 		{
-			if (count == 1) {
+			if (count ==0) {
 				distanceX = startRc.x - pt.x;
 				distanceY = startRc.y - pt.y;
 			}
 			move(distanceX + pt.x, distanceY + pt.y);
+			char strPT[100];
+			wsprintf(strPT, "마우스 이동중 (%-10d, %-10d) %d", distanceX + pt.x, distanceY + pt.y, count);
+
+			TextOut(hdc, 50,100, strPT,strlen(strPT));
 		}//if (isClicked)
 	}//drag
 
@@ -30,11 +34,12 @@ public:
 		distanceY = NULL;
 	}
 
-	void click(POINT pt) {
+	void click(POINT pt,HDC hdc) {
 		if (PointInRect_point(pt, startRc, length, length))
 		{
 			count++;
 			isClicked = true;
+			TextOut(hdc, 50,80,"click", strlen("click"));
 		}
 		else isClicked = false;
 	}

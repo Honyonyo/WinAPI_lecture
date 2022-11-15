@@ -35,7 +35,7 @@
 */
 #pragma region
 
-HINSTANCE _hInstance;                                // 현재 인스턴스입니다.
+HINSTANCE _hinstance;                                // 현재 인스턴스입니다.
 HWND _hWnd;                                         //윈도우핸들 : 윈도우 창
 POINT _ptMouse = { 0,0 };
 
@@ -47,13 +47,16 @@ void setWindowSize(int x, int y, int width, int height);
 
 RECT _rc1, _rc2;
 
+int centerX;
+int centerY;
+
 //메 인 함 수! 듀듕 
 int APIENTRY WinMain(HINSTANCE hInstance,
                     HINSTANCE hPrevInstance,
                     LPSTR     lpszCmdParam,
                     int       nCmdShow)
 {
-    _hInstance = hInstance;
+    _hinstance = hInstance;
 
     WNDCLASS wndClass;
 
@@ -125,13 +128,13 @@ char strPT[400];
 LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
     HDC hdc;        //핸들dc_ GDI안에있는데. png는 안되고 bmp만 받아줌. GDI+를사용하면 PNG를 사용할 수 있다.
     PAINTSTRUCT ps; //페인트구조체
-    RECT rc;
-
+    POINT polyline[3] = { {60,50}, {50,40},{110,20} };
     switch (imsg) {
     case WM_CREATE:
         hdc = BeginPaint(hwnd, &ps);
         _rc1 = RectMakeCenter(WINSIZE_X/2, WINSIZE_Y/2, 100,100);
         _rc2 = RectMakeCenter(WINSIZE_X / 2, WINSIZE_Y / 2, 400, 100);
+
 
 
         EndPaint(hwnd, &ps);
@@ -154,16 +157,22 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
 
         MoveToEx(hdc, 400, 400, NULL);
         LineTo(hdc, 200, 200);
-
+        Rectangle(hdc, centerX, centerY, 300, 300);
+        Polygon(hdc, polyline, 3);
         EndPaint(hwnd, &ps);
         break;
 
     case WM_MOUSEMOVE:
         _ptMouse.x = LOWORD(lparam);
         _ptMouse.y = HIWORD(lparam);
-        InvalidateRect(hwnd, NULL, false);
+        InvalidateRect(hwnd, NULL, true);
+
+        break;
 
     case WM_LBUTTONDOWN:    //좌클릭발생
+        centerX = RND->getInt(WINSIZE_X);
+        centerY = RND->getInt(WINSIZE_Y);
+        InvalidateRect(hwnd, NULL, true);
         break;
 
     case WM_LBUTTONUP:

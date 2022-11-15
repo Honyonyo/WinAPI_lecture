@@ -22,6 +22,12 @@
     <Filter Include="HomeWork\1113 마우스">
       <UniqueIdentifier>{64b38689-219f-4e69-ae69-f123b02f93dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="API FrameWork\DesignPattern">
+      <UniqueIdentifier>{f144cbf2-7bcf-44e2-a2e2-02ffd3f582d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HomeWork\1114 다각형">
+      <UniqueIdentifier>{8f3a0d8e-7a27-4b74-b5e4-5373e62e6a05}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -41,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="WinMain1114.cpp">
       <Filter>HomeWork\1113 마우스</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain1115.cpp">
+      <Filter>HomeWork\1114 다각형</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +75,15 @@
     </ClInclude>
     <ClInclude Include="Rect_.h">
       <Filter>HomeWork\1113 마우스</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonBase.h">
+      <Filter>API FrameWork\DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomFunction.h">
+      <Filter>API FrameWork\DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomPolygon.h">
+      <Filter>HomeWork\1114 다각형</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

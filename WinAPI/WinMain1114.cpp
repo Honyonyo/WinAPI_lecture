@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Rect_.h"
-
+//미완성과제. 이상해!
 HINSTANCE _hInstance;                      
 HWND _hWnd;                                        
 POINT _ptMouse = { 0,0 };
@@ -83,12 +83,11 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 }
 
 char strPT[100];
-short count;
+short count=0;
 LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
     HDC hdc;        //핸들dc_ GDI안에있는데. png는 안되고 bmp만 받아줌. GDI+를사용하면 PNG를 사용할 수 있다.
     PAINTSTRUCT ps; //페인트구조체
 
-        count = 0;
     switch (imsg) {
     case WM_CREATE:
         hdc = BeginPaint(hwnd, &ps);
@@ -108,21 +107,21 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
     case WM_MOUSEMOVE:
         _ptMouse.x = LOWORD(lparam);
         _ptMouse.y = HIWORD(lparam);
-        wsprintf(strPT, "(%-10d, %-10d) %d", _ptMouse.x, _ptMouse.y, count++);
+        wsprintf(strPT, "(%-10d, %-10d) %d", _ptMouse.x, _ptMouse.y);
         hdc = GetDC(hwnd);
         TextOut(hdc, 10, 10, strPT, strlen(strPT));
         rc1_.draw(hdc);
         break;
 
     case WM_LBUTTONDOWN:    //좌클릭발생        
-        rc1_.click(_ptMouse);
+        //rc1_.click(_ptMouse,hdc);
         InvalidateRect(hwnd, NULL, true);
-        //hdc = GetDC(hwnd);
+        hdc = BeginPaint(hwnd, &ps);
+        rc1_.drag(_ptMouse, hdc);
         //wsprintf(strPT, "(%-10d, %-10d) %d", rc1_.getPoint().x, rc1_.getPoint().y, count++);
         //TextOut(hdc, 10, 40, strPT, strlen(strPT));
         //rc1_.draw(hdc);
 
-        hdc = BeginPaint(hwnd, &ps);
         rc1_.draw(hdc);
         wsprintf(strPT, "(%-10d, %-10d) %d", rc1_.getPoint().x, rc1_.getPoint().y, rc1_.getClicked());
         TextOut(hdc, 10, 40, strPT, strlen(strPT));

@@ -17,9 +17,9 @@
 //!C 런타임 헤더파일
 #include <stdio.h>
 #include <stdlib.h>
-#include <malloc.h>	//동적할당
 #include <memory.h>	//메모리조작함수
 #include <tchar.h>	//문자셋을 변경해주는 자료메모리
+#include <time.h>
 
 /*
 MBCS(Multi Byte Character Set)
@@ -66,9 +66,6 @@ unordered_map : Hash자료구조
 //#include <cassert>	//추후 설명해주세요
 
 
-/*사용자 정의 헤더파일*/
-//상호포함관계로 거대하게 묶어주기 때문에 여기다가 include 한 것 뿐이더라도 comm~에 windows.h가 include된것과 같은 효과를 줌
-
 /*
 //! D2D, D3D 헤더파일
 #include <D2D1.h>
@@ -92,9 +89,16 @@ ID2D1HwndRenderTarget*	_ID2DRenderTarget = nullptr;
 */
 
 
-#include "CommonMacroFunction.h"
-// # 매크로 # 윈도우 창 초기화
 
+/*사용자 정의 헤더파일*/
+//상호포함관계로 거대하게 묶어주기 때문에 여기다가 include 한 것 뿐이더라도 comm~에 windows.h가 include된것과 같은 효과를 줌
+#include "CommonMacroFunction.h"
+#include "RandomFunction.h"
+
+// # 싱 글 톤 #
+#define RND RandomFunction::getSingleton()
+
+// # 매크로 # 윈도우 창 초기화
 #define WIN_NAME	(LPSTR)(TEXT("WindowsAPI"))
 #define WINSTART_X	400
 #define WINSTART_Y	100
