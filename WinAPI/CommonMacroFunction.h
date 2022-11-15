@@ -11,6 +11,13 @@ inline void LineMake(HDC hdc, int startX, int startY, int endX, int endY) {
 	LineTo(hdc, endX, endY);
 }
 
+//포인트로 선그리기
+inline void LineMake(HDC hdc, POINT start, POINT end) {
+	MoveToEx(hdc, start.x, start.y, NULL);
+	LineTo(hdc, end.x, end.y);
+}
+
+
 //사각형만들기. 헤더산개를 막기위해 여기서 함수로 감싸준 것
 inline RECT RectMake(int x, int y, int width, int height) {
 	RECT rc = { x, y, width, height };

@@ -146,8 +146,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
             ReleaseDC(hwnd, hdc);
             break;
         case VK_RIGHT:
-
-            //지오메트리 대시
             break;
         case VK_ESCAPE:
             PostMessage(hwnd, WM_DESTROY, 0, 0);

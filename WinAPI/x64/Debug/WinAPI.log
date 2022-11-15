@@ -1,15 +1,19 @@
 ﻿  WinMain1115.cpp
-C:\Users\KGA_06\Desktop\WinAPI\RandomFunction.h(48,25): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\RandomPolygon.h(57,29): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\RandomPolygon.h(58,30): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\RandomPolygon.h(64,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\RandomPolygon.h(69,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\RandomPolygon.h(75,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\Draw.h(154,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\Draw.h(157,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\Draw.h(158,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\Draw.h(170,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\Draw.h(189,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\Draw.h(191,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\KGA_06\Desktop\WinAPI\WinMain1115.cpp(70,9): warning C4101: 'hbr' :참조되지 않은 지역 변수입니다.
-  WinAPI.vcxproj -> C:\Users\KGA_06\Desktop\WinAPI\x64\Debug\WinAPI.exe
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\RandomFunction.h(48,25): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\RandomPolygon.h(57,29): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\RandomPolygon.h(58,30): warning C4244: '=': 'LONG'에서 'short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\RandomPolygon.h(64,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\RandomPolygon.h(69,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\RandomPolygon.h(75,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(253,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(269,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(275,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(283,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(290,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(300,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(301,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(312,68): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(313,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\Draw.h(331,1): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\WinMain1115.cpp(70,9): warning C4101: 'hbr' :참조되지 않은 지역 변수입니다.
+  WinAPI.vcxproj -> C:\Users\6464r\OneDrive\Documents\GitHub\WinAPI_lecture\WinAPI\x64\Debug\WinAPI.exe
