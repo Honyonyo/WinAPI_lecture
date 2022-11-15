@@ -195,6 +195,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
             //지오메트리 대시
             break;
         case VK_ESCAPE:
+            //소멸자 전달. 돌아서 밑에있는거 호출될거임
             PostMessage(hwnd, WM_DESTROY, 0, 0);
             break;
         }

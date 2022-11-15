@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "RandomPolygon.h"
+#include "Draw.h"
 HINSTANCE _hinstance;
 HWND _hWnd;
 LPSTR lpszClass = TEXT("다각형 그리기모드");
@@ -66,10 +67,11 @@ int APIENTRY WinMain(HINSTANCE hinstance, HINSTANCE hPrevInstance, LPSTR lpszCmd
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 	HDC hdc;
+	HBRUSH hbr;
 	PAINTSTRUCT ps;
 	POINT _ptMouse;
 	RndPoly rolypoly;
-
+	Face face;
 
 
 	switch (iMsg) {
@@ -89,18 +91,20 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 		_ptMouse.x = LOWORD(lParam);
 		_ptMouse.y = HIWORD(lParam);
 
-		InvalidateRect(hWnd, NULL, false);
 		hdc = GetDC(hWnd);
 		rolypoly.draw(hdc,_ptMouse);				
 		break;
 
 	case WM_RBUTTONDOWN:
+		hdc = GetDC(hWnd);
+		face.draw(hdc);
 		break;
 
 	case WM_KEYDOWN:
 		switch (wParam) {
 		case VK_ESCAPE:
 
+			PostMessage(hWnd, WM_DESTROY, 0, 0);	
 			break;
 		}
 		break;

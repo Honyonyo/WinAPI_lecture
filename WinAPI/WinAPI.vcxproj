@@ -161,6 +161,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="CommonMacroFunction.h" />
+    <ClInclude Include="Draw.h" />
     <ClInclude Include="RandomFunction.h" />
     <ClInclude Include="RandomPolygon.h" />
     <ClInclude Include="Rect_.h">

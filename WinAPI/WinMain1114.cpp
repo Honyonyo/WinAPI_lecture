@@ -126,7 +126,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
         wsprintf(strPT, "(%-10d, %-10d) %d", rc1_.getPoint().x, rc1_.getPoint().y, rc1_.getClicked());
         TextOut(hdc, 10, 40, strPT, strlen(strPT));
 
-
         EndPaint(hwnd, &ps); 
         break;
 

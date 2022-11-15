@@ -4,7 +4,7 @@ using namespace std;
 class RndPoly {
 private:
 	int vertex;	//0 : 동그라미 1 :네모 2 : 세모
-	POINT polypoint[3];
+	POINT polypoint[3]={0};
 
 public:
 
