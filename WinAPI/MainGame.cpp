@@ -17,31 +17,42 @@ void MainGame::release(void)
 
 void MainGame::update(void)
 {
-	if (KEYMANAGER->isStayKeyDown(VK_UP)) {
-		rc.top -= 3;
-		rc.bottom -= 3;
-	}
-	if (KEYMANAGER->isStayKeyDown(VK_DOWN)) {
-		rc.top += 3;
-		rc.bottom += 3;
-	}
-	if (KEYMANAGER->isStayKeyDown(VK_LEFT)) {
-		rc.left -= 3;
-		rc.right -= 3;
-	}
-	if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) {
-		rc.left += 3;
-		rc.right += 3;	
-	}
+	game.doGame();
+
+
+
 
 	GameNode::update();
+	//if (KEYMANAGER->isStayKeyDown(VK_UP)) {
+	//	rc.top -= 3;
+	//	rc.bottom -= 3;
+	//}
+	//if (KEYMANAGER->isStayKeyDown(VK_DOWN)) {
+	//	rc.top += 3;
+	//	rc.bottom += 3;
+	//}
+	//if (KEYMANAGER->isStayKeyDown(VK_LEFT)) {
+	//	rc.left -= 3;
+	//	rc.right -= 3;
+	//}
+	//if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) {
+	//	rc.left += 3;
+	//	rc.right += 3;	
+	//}
+
 }
 
 
 void MainGame::render(HDC hdc)
 {
-	if(KEYMANAGER->isToggleKey(VK_F1))
-	{
-		DrawRectMake(hdc, rc);
-	}
+
+	game.render(hdc);
+
+
+
+	//if(KEYMANAGER->isToggleKey(VK_F1))
+	//{
+	//	DrawRectMake(hdc, rc);
+	//}
+
 }

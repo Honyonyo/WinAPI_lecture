@@ -1,2 +1,9 @@
-﻿  MainGame.cpp
-  WinAPI.vcxproj -> C:\Users\KGA_05\Desktop\강유진\WinAPI\x64\Debug\WinAPI.exe
+﻿  Game_ClayShooting.cpp
+C:\Users\USER\Desktop\WinAPI\Game_ClayShooting.cpp(52,34): warning C4244: '=': 'DWORD'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\USER\Desktop\WinAPI\Game_ClayShooting.cpp(69,41): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\USER\Desktop\WinAPI\Game_ClayShooting.cpp(124,24): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\USER\Desktop\WinAPI\Game_ClayShooting.cpp(126,30): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\USER\Desktop\WinAPI\Game_ClayShooting.cpp(129,24): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\USER\Desktop\WinAPI\Game_ClayShooting.cpp(131,30): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\USER\Desktop\WinAPI\Game_ClayShooting.cpp(155,172): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  WinAPI.vcxproj -> C:\Users\USER\Desktop\WinAPI\x64\Debug\WinAPI.exe

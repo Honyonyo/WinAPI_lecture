@@ -139,6 +139,7 @@
     <ClCompile Include="GameNode.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Game_ClayShooting.cpp" />
     <ClCompile Include="IWindowMessage.cpp" />
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="MainGame.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="GameNode.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Game_ClayShooting.h" />
     <ClInclude Include="IWindowMessage.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="MainGame.h" />

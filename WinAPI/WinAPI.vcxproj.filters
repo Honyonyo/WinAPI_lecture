@@ -37,6 +37,9 @@
     <Filter Include="API FrameWork\Manager">
       <UniqueIdentifier>{b6236ff0-ee44-4d31-9a01-4a3d777bbf3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HomeWork\MainGame_16">
+      <UniqueIdentifier>{1e9bad04-d411-4250-b154-333b04d6edf6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C3DMatrix.cpp">
@@ -69,6 +72,9 @@
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="KeyManager.cpp">
       <Filter>API FrameWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_ClayShooting.cpp">
+      <Filter>HomeWork\MainGame_16</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="KeyManager.h">
       <Filter>API FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_ClayShooting.h">
+      <Filter>HomeWork\MainGame_16</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
