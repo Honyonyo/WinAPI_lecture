@@ -1,8 +1,5 @@
 #include "stdafx.h"
-
-//Utility
-//  ㄴMath
-
+#include "MainGame.h"
 
 #pragma region 윈도우API
 /*
@@ -33,11 +30,12 @@
             cpu클럭에 넣기       창 띄우기 위한 세팅     프로시저에 작성된 문을 메세지 형태로 읽어들인다
 
 */
-#pragma region
+#pragma region 
 
-HINSTANCE _hinstance;                                // 현재 인스턴스입니다.
+HINSTANCE _hinstance;                               // 현재 인스턴스입니다.
 HWND _hWnd;                                         //윈도우핸들 : 윈도우 창
 POINT _ptMouse = { 0,0 };
+MainGame* _mg;
 
 // # 함수 전방선언 #
 
@@ -56,6 +54,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,
                     LPSTR     lpszCmdParam,
                     int       nCmdShow)
 {
+    _mg = new MainGame;
     _hinstance = hInstance;
 
     WNDCLASS wndClass;
@@ -100,7 +99,11 @@ int APIENTRY WinMain(HINSTANCE hInstance,
     //1-4. 화면에 윈도우 창 보여주기
     ShowWindow(_hWnd, nCmdShow);
 
-
+    //메인게임 클래스 초기화 실패시 종료
+    if(FAILED(_mg->init()))
+    {
+        return 0;
+    }
     MSG message;
 /*
 게임용~
@@ -119,93 +122,19 @@ int APIENTRY WinMain(HINSTANCE hInstance,
             DispatchMessage(&message);
     }
 
+    _mg->release();
+    //윈도우 클래스 등록 해제
+    UnregisterClass(WIN_NAME, hInstance);
+
     return (int)message.wParam;
 }
 
 char strPT[400];
 
 
-LRESULT CALLBACK WndProc(HWND hwnd, UINT imsg, WPARAM wparam, LPARAM lparam) {
-    HDC hdc;        //핸들dc_ GDI안에있는데. png는 안되고 bmp만 받아줌. GDI+를사용하면 PNG를 사용할 수 있다.
-    PAINTSTRUCT ps; //페인트구조체
-    POINT polyline[3] = { {60,50}, {50,40},{110,20} };
-    switch (imsg) {
-    case WM_CREATE:
-        hdc = BeginPaint(hwnd, &ps);
-        _rc1 = RectMakeCenter(WINSIZE_X/2, WINSIZE_Y/2, 100,100);
-        _rc2 = RectMakeCenter(WINSIZE_X / 2, WINSIZE_Y / 2, 400, 100);
+LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam) {
 
-
-
-        EndPaint(hwnd, &ps);
-        break;
-
-    case WM_PAINT:          //출력에 관한 모든 것을 담당한다(문자,그림,도형 등등 화면에 보이는 모든 것)
-        hdc = BeginPaint(hwnd, &ps);
-        wsprintf(strPT, "(%-10d, %-10d)", _ptMouse.x, _ptMouse.y);
-        TextOut(hdc, 10, 10, strPT, strlen(strPT));
-        //이곳에 출력에 관한 코딩을 하면 된다.
-
-        //문자출력
-        //TextOut(hdc,x,y,문자열, 문자열길이)
-        //strlen는 할당받은 메모리에 바인딩된 문자열에서 NULL을 제외한 문자열 길이를 반환해줌
-
-        SetTextColor(hdc, RGB(255, 0, 0));
-
-        MoveToEx(hdc, 400, 400, NULL);  //동작시작점
-        LineTo(hdc, 200, 400);  //동작끝점
-
-        MoveToEx(hdc, 400, 400, NULL);
-        LineTo(hdc, 200, 200);
-        Rectangle(hdc, centerX, centerY, 300, 300);
-        Polygon(hdc, polyline, 3);
-        EndPaint(hwnd, &ps);
-        break;
-
-    case WM_MOUSEMOVE:
-        _ptMouse.x = LOWORD(lparam);
-        _ptMouse.y = HIWORD(lparam);
-        InvalidateRect(hwnd, NULL, true);
-
-        break;
-
-    case WM_LBUTTONDOWN:    //좌클릭발생
-        centerX = RND->getInt(WINSIZE_X);
-        centerY = RND->getInt(WINSIZE_Y);
-        InvalidateRect(hwnd, NULL, true);
-        break;
-
-    case WM_LBUTTONUP:
-        break;
-        
-    case WM_RBUTTONDOWN:    //우클릭 발생 
-
-        break;
-
-    case WM_KEYDOWN:    //키눌린상황에서 발생
-        switch (wparam) {
-        case VK_LEFT:
-        hdc=GetDC(hwnd);
-            SetTextColor(hdc, RGB(0, 0, 255));
-            
-        ReleaseDC(hwnd, hdc);
-            break;
-        case VK_RIGHT:
-
-            //지오메트리 대시
-            break;
-        case VK_ESCAPE:
-            //소멸자 전달. 돌아서 밑에있는거 호출될거임
-            PostMessage(hwnd, WM_DESTROY, 0, 0);
-            break;
-        }
-        break;
-
-    case WM_DESTROY:
-        PostQuitMessage(0);
-        return 0;
-    }
-    return (DefWindowProc(hwnd, imsg, wparam, lparam));
+    return _mg->MainProc(hWnd, iMsg, wParam, lParam);
 }
 
 void setWindowSize(int x, int y, int width, int height)

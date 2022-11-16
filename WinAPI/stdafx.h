@@ -1,4 +1,6 @@
 #pragma once
+//PreCompiledHeader PCH
+
 //4005 : DXGI등 그래픽 인터페이스에서 매크로 관련하여 많이 출력되는 경고
 //프로젝트 속성 고급에서 설정 가능
 #pragma warning(disable : 4005)
@@ -63,6 +65,13 @@ unordered_map : Hash자료구조
 
 #include <unordered_map>	//
 #include <string>	//문자열 라이브러리
+//bitset : 비트연산을 좀 더 쉽게 관리해주는 함수를 지원한다. (STL)
+//	ㄴ reset(), set() flip(), all(), any(), size()등등을 비트연산에 한해 지원하고있다.
+#include <bitset>	//전역에 namespace std; 하면 모든거 앞에 std그거그거하니까... 
+
+using std::vector;
+using std::bitset;
+
 //#include <cassert>	//추후 설명해주세요
 
 
@@ -94,9 +103,11 @@ ID2D1HwndRenderTarget*	_ID2DRenderTarget = nullptr;
 //상호포함관계로 거대하게 묶어주기 때문에 여기다가 include 한 것 뿐이더라도 comm~에 windows.h가 include된것과 같은 효과를 줌
 #include "CommonMacroFunction.h"
 #include "RandomFunction.h"
+#include "KeyManager.h"
 
 // # 싱 글 톤 #
 #define RND RandomFunction::getSingleton()
+#define KEYMANAGER KeyManager::getSingleton()
 
 // # 매크로 # 윈도우 창 초기화
 #define WIN_NAME	(LPSTR)(TEXT("WindowsAPI"))
@@ -122,3 +133,4 @@ extern HWND			_hWnd;
 
 //int x, int y말고 POINT.x, POINT.y
 extern POINT		_ptMouse;
+

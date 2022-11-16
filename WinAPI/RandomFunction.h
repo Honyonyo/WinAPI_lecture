@@ -48,6 +48,8 @@ public:
 		return(rnd * (toNum = fromNum) + fromNum);
 	}
 
+	HRESULT init(void) { return S_OK; }
+
 private:
 
 };

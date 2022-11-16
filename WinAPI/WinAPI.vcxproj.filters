@@ -4,9 +4,6 @@
     <Filter Include="API FrameWork">
       <UniqueIdentifier>{927d90d9-3762-4867-af17-086f78a8e8a0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Lesson">
-      <UniqueIdentifier>{b051e171-2df1-4b5d-899a-422a71f67238}</UniqueIdentifier>
-    </Filter>
     <Filter Include="API FrameWork\Utility">
       <UniqueIdentifier>{7bf44066-0b25-450d-b977-0868f0524191}</UniqueIdentifier>
     </Filter>
@@ -28,11 +25,20 @@
     <Filter Include="HomeWork\1115 다각형">
       <UniqueIdentifier>{8f3a0d8e-7a27-4b74-b5e4-5373e62e6a05}</UniqueIdentifier>
     </Filter>
+    <Filter Include="API FrameWork\GameCore">
+      <UniqueIdentifier>{75617e6e-9aeb-4f50-a4e9-4e578e1f53e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame">
+      <UniqueIdentifier>{18ee7c09-1b00-47c3-890a-ada2cf7c7038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson">
+      <UniqueIdentifier>{b051e171-2df1-4b5d-899a-422a71f67238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\Manager">
+      <UniqueIdentifier>{b6236ff0-ee44-4d31-9a01-4a3d777bbf3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WinMain.cpp">
-      <Filter>API FrameWork</Filter>
-    </ClCompile>
     <ClCompile Include="C3DMatrix.cpp">
       <Filter>API FrameWork\Utility\Math</Filter>
     </ClCompile>
@@ -50,6 +56,19 @@
     </ClCompile>
     <ClCompile Include="WinMain1115.cpp">
       <Filter>HomeWork\1115 다각형</Filter>
+    </ClCompile>
+    <ClCompile Include="GameNode.cpp">
+      <Filter>API FrameWork\GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="IWindowMessage.cpp">
+      <Filter>API FrameWork\GameCore</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>API FrameWork\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +106,18 @@
     </ClInclude>
     <ClInclude Include="Draw.h">
       <Filter>HomeWork\1115 다각형</Filter>
+    </ClInclude>
+    <ClInclude Include="GameNode.h">
+      <Filter>API FrameWork\GameCore</Filter>
+    </ClInclude>
+    <ClInclude Include="IWindowMessage.h">
+      <Filter>API FrameWork\GameCore</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>API FrameWork\Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
