@@ -5,7 +5,7 @@
 HRESULT MainGame::init(void)
 {
 	GameNode::init();
-	rc = RectMakeCenter(WINSIZE_X / 2, WINSIZE_Y / 2, 100, 100);
+	pooFighter.init();
 
 	return S_OK;
 }
@@ -13,35 +13,25 @@ HRESULT MainGame::init(void)
 void MainGame::release(void)
 {
 	GameNode::release();
+	pooFighter.release();
 }
 
 void MainGame::update(void)
 {
-	if (KEYMANAGER->isStayKeyDown(VK_UP)) {
-		rc.top -= 3;
-		rc.bottom -= 3;
-	}
-	if (KEYMANAGER->isStayKeyDown(VK_DOWN)) {
-		rc.top += 3;
-		rc.bottom += 3;
-	}
-	if (KEYMANAGER->isStayKeyDown(VK_LEFT)) {
-		rc.left -= 3;
-		rc.right -= 3;
-	}
-	if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) {
-		rc.left += 3;
-		rc.right += 3;	
-	}
+	
+	//game.doGame();
+
+
 
 	GameNode::update();
+	pooFighter.update();
+
 }
 
 
 void MainGame::render(HDC hdc)
 {
-	if(KEYMANAGER->isToggleKey(VK_F1))
-	{
-		DrawRectMake(hdc, rc);
-	}
+	pooFighter.render(hdc);
+	//game.render(hdc);
+
 }

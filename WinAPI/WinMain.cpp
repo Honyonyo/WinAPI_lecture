@@ -43,11 +43,6 @@ MainGame* _mg;
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 void setWindowSize(int x, int y, int width, int height);
 
-RECT _rc1, _rc2;
-
-int centerX;
-int centerY;
-
 //¸Þ ÀÎ ÇÔ ¼ö! µàµä 
 int APIENTRY WinMain(HINSTANCE hInstance,
                     HINSTANCE hPrevInstance,

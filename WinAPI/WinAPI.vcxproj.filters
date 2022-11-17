@@ -37,6 +37,9 @@
     <Filter Include="API FrameWork\Manager">
       <UniqueIdentifier>{b6236ff0-ee44-4d31-9a01-4a3d777bbf3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HomeWork\MainGame_16">
+      <UniqueIdentifier>{1e9bad04-d411-4250-b154-333b04d6edf6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C3DMatrix.cpp">
@@ -70,6 +73,12 @@
     <ClCompile Include="KeyManager.cpp">
       <Filter>API FrameWork\Manager</Filter>
     </ClCompile>
+    <ClCompile Include="Game_ClayShooting.cpp">
+      <Filter>HomeWork\MainGame_16</Filter>
+    </ClCompile>
+    <ClCompile Include="똥피하기.cpp">
+      <Filter>HomeWork</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Lesson\수업 내용.txt">
@@ -80,9 +89,6 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CommonMacroFunction.h">
-      <Filter>API FrameWork</Filter>
-    </ClInclude>
     <ClInclude Include="C3DMatrix.h">
       <Filter>API FrameWork\Utility\Math</Filter>
     </ClInclude>
@@ -96,9 +102,6 @@
       <Filter>HomeWork\1113 마우스</Filter>
     </ClInclude>
     <ClInclude Include="SingletonBase.h">
-      <Filter>API FrameWork\DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="RandomFunction.h">
       <Filter>API FrameWork\DesignPattern</Filter>
     </ClInclude>
     <ClInclude Include="RandomPolygon.h">
@@ -118,6 +121,21 @@
     </ClInclude>
     <ClInclude Include="KeyManager.h">
       <Filter>API FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_ClayShooting.h">
+      <Filter>HomeWork\MainGame_16</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonMacroFunction.h">
+      <Filter>API FrameWork\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomFunction.h">
+      <Filter>API FrameWork\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="두더지잡기.h">
+      <Filter>Lesson</Filter>
+    </ClInclude>
+    <ClInclude Include="똥피하기.h">
+      <Filter>HomeWork</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

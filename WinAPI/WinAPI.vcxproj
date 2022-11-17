@@ -139,6 +139,9 @@
     <ClCompile Include="GameNode.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Game_ClayShooting.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="IWindowMessage.cpp" />
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="MainGame.cpp" />
@@ -159,6 +162,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="똥피하기.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Lesson\1109.txt" />
@@ -179,6 +183,9 @@
     <ClInclude Include="GameNode.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Game_ClayShooting.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="IWindowMessage.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="MainGame.h" />
@@ -192,6 +199,8 @@
     </ClInclude>
     <ClInclude Include="SingletonBase.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="두더지잡기.h" />
+    <ClInclude Include="똥피하기.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
