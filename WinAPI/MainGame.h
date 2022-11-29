@@ -1,21 +1,30 @@
 #pragma once
 #include "GameNode.h"
-#include "똥피하기.h"
 /*
-include "두더지잡기.h"
+* README
 */
-
 
 class MainGame : public GameNode
 {
 private:
-	똥피하기 pooFighter;
+
+	int _alphaA;
+	bool _isAlphaIncrease;
+
+	int _offsetX, _offSetY;
+	float _bgSpeed;
 
 public:
-	virtual HRESULT init(void);
-	virtual void release(void);
-	virtual void update(void);
-	virtual void render(HDC hdc);
+	HRESULT init(void);
+	void release(void);
+	void update(void);
+	void render(void);
+	
+	bool mouseInMe();
+	void clickMoveMe();
+	void impact();
 
+	MainGame() {}
+	~MainGame() {}
 };
 

@@ -1,3 +1,17 @@
-﻿  똥피하기.cpp
-C:\Users\KGA_05\Desktop\강유진\WinAPI\똥피하기.cpp(65,29): warning C4244: '=': 'ULONGLONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  WinAPI.vcxproj -> C:\Users\KGA_05\Desktop\강유진\WinAPI\x64\Debug\WinAPI.exe
+﻿  stdafx.cpp
+C:\Users\KGA_05\Desktop\WinAPI\CommonMacroFunction.h(79,43): warning C4244: 'return': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\KGA_05\Desktop\WinAPI\RandomFunction.h(48,25): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GImage.cpp
+C:\Users\KGA_05\Desktop\WinAPI\GImage.cpp(96,28): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\KGA_05\Desktop\WinAPI\GImage.cpp(134,28): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\KGA_05\Desktop\WinAPI\GImage.cpp(176,28): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\KGA_05\Desktop\WinAPI\GImage.cpp(221,28): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GameNode.cpp
+  IWindowMessage.cpp
+  ImageManager.cpp
+  KeyManager.cpp
+  MainGame.cpp
+C:\Users\KGA_05\Desktop\WinAPI\MainGame.cpp(45,42): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  WinMain.cpp
+  코드를 생성하고 있습니다...
+  WinAPI.vcxproj -> C:\Users\KGA_05\Desktop\WinAPI\x64\Debug\WinAPI.exe

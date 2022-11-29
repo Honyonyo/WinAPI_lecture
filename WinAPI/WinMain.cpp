@@ -72,6 +72,44 @@ int APIENTRY WinMain(HINSTANCE hInstance,
     //1-2. 윈도우 클래스 등록
     RegisterClass(&wndClass);
 
+#ifdef FULL_SCREEN
+    DEVMODE dm;
+
+    ZeroMemory(&dm, sizeof(DEVMODE));
+    dm.dmSize = sizeof(DEVMODE);
+    dm.dmBitsPerPel = 32;       //32비트 트루컬러
+    dm.dmPelsWidth = 1980;
+    dm.dmPelsHeight = 1080;
+    dm.dmDisplayFrequency = 60; //주사율 60Hz
+
+    dm.dmFields = DM_BITSPERPEL | DM_PELSWIDTH | DM_PELSHEIGHT | DM_DISPLAYFREQUENCY;
+
+    //화면이 종료되면 원래 해상도로 복귀
+    if (ChangeDisplaySettings(&dm, CDS_FULLSCREEN) != DISP_CHANGE_SUCCESSFUL) {
+        ChangeDisplaySettings(&dm, 0);
+    }
+
+    //1-3. 화면에 보여줄 윈도우 창 생성
+    _hWnd = CreateWindow    
+    (
+        WIN_NAME,     //윈도우 클래스 식별자
+        WIN_NAME,     //윈도우 타이틀 바 이름
+        WINSTYLE,    //윈도우 스타일
+        WINSTART_X,            //윈도우 화면 X좌표. 내가 만든 창이 뜨는 모니터 화면 위치
+        WINSTART_Y,            //윈도우 화면 Y좌표. 내가 만든 창이 뜨는 모니터 화면 위치
+        WINSIZE_X,            //윈도우 화면 가로크기
+        WINSIZE_Y,            //윈도우 화면 세로크기
+        NULL,//부모 윈도우 지정 여부 (없으면 NULL, 그치만안정성높은건 GetDesktopWindow())
+        (HMENU)NULL,    //메뉴 핸들
+        hInstance,      //인스턴스 지정
+        NULL            //윈도우의 자식 윈도우를 생성하면 지정하고 아니라면 NULL_아마 메세지창..?경고창/
+                            //필요에 의해서 사용. 지금은 null
+    );
+
+    setWindowSize(WINSTART_X, WINSTART_Y, WINSIZE_X, WINSIZE_Y);
+
+#else
+
     //1-3. 화면에 보여줄 윈도우 창 생성
     _hWnd = CreateWindow    //사용하는 일이 많으므로 친구하자^^
     (
@@ -90,6 +128,8 @@ int APIENTRY WinMain(HINSTANCE hInstance,
     );
 
     setWindowSize(WINSTART_X, WINSTART_Y, WINSIZE_X, WINSIZE_Y);
+
+#endif
 
     //1-4. 화면에 윈도우 창 보여주기
     ShowWindow(_hWnd, nCmdShow);

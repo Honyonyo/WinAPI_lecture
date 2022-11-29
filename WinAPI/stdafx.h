@@ -15,6 +15,11 @@
 
 //!Windows헤더파일
 #include <Windows.h>
+#ifdef UNICODE
+#pragma comment(linker, "/entry:wWinMainCRTStartup /subsystem:console")
+#else
+#pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")
+#endif
 
 //!C 런타임 헤더파일
 #include <stdio.h>
@@ -22,6 +27,8 @@
 #include <memory.h>	//메모리조작함수
 #include <tchar.h>	//문자셋을 변경해주는 자료메모리
 #include <time.h>
+#include <math.h>
+
 
 /*
 MBCS(Multi Byte Character Set)
@@ -53,9 +60,11 @@ c++ 11에서 추가된 시간 관련 라이브러리
 (tiome 초안위
 os와 독립적으로 적용
 */
+
 #include <chrono>
 #include <random>	//메르센트위스터 난수
 #include <vector>	//동적배열
+#include <list>
 #include <map>		//레드블랙트리를 기반으로 키와 밸류를 가지는 자료형
 /*
 unordered_map : Hash자료구조
@@ -70,6 +79,9 @@ unordered_map : Hash자료구조
 #include <bitset>	//전역에 namespace std; 하면 모든거 앞에 std그거그거하니까... 
 
 using std::vector;
+using std::list;
+using std::map;
+using std::string;
 using std::bitset;
 
 //#include <cassert>	//추후 설명해주세요
@@ -97,33 +109,62 @@ ID2D1Factory*			_ID2DFactory = nullptr;
 ID2D1HwndRenderTarget*	_ID2DRenderTarget = nullptr;
 */
 
+#pragma comment(lib,"msimg32.lib")
 
-
-/*사용자 정의 헤더파일*/
+/* 사용자 정의 헤더파일 */
 //상호포함관계로 거대하게 묶어주기 때문에 여기다가 include 한 것 뿐이더라도 comm~에 windows.h가 include된것과 같은 효과를 줌
+#include "GImage.h"
 #include "CommonMacroFunction.h"
 #include "RandomFunction.h"
 #include "KeyManager.h"
+#include "ImageManager.h"
 
 // # 싱 글 톤 #
 #define RND RandomFunction::getSingleton()
 #define KEYMANAGER KeyManager::getSingleton()
+#define IMAGEMANAGER ImageManager::getSingleton()
+
 
 // # 매크로 # 윈도우 창 초기화
+//전체화면
+//#define FULL_SCREEN
+
+#ifdef FULL_SCREEN
+#define WIN_NAME	(LPSTR)(TEXT("WindowsAPI"))
+#define WINSTART_X	0
+#define WINSTART_Y	0
+//GetSystemMetrics : 인자로 전달되는 시스템설정정보를 반환한다.
+	//SM_CXSCREEN/ SM_CYSCREEN현재 화면 기준 해상도 x / y축 반환
+#define WINSIZE_X	GetSystemMetrics(SM_CXSCREEN)
+#define WINSIZE_Y	GetSystemMetrics(SM_CYSCREEN)
+//					팝업 윈도우 생성 | 윈도우사이즈 최대화
+#define WINSTYLE	WS_POPUPWINDOW | WS_MAXIMIZE
+#else
 #define WIN_NAME	(LPSTR)(TEXT("WindowsAPI"))
 #define WINSTART_X	400
 #define WINSTART_Y	100
-#define WINSIZE_X	800
+#define WINSIZE_X	1280
 #define WINSIZE_Y	800
+
 // WS_CAPTION 타이틀바를 가지기 위한 옵션
 // WS_SYSMENU 제목표시줄에 컨트롤메뉴상자창을 만드는 옵션( _ ㅁ X )
-
 #define WINSTYLE	WS_CAPTION | WS_SYSMENU
+#endif // 0
+
 
 // # 매크로 함수 #
 #define SAFE_DELETE(p)	{if(p){delete(p); (p) = nullptr;}}
 #define SAFE_DELETE_ARRAY(p)	{if(p){delete[] (p); (p) = nullptr;}}
 #define SAFE_RELEASE(p)		{if(p){(p)->release();(p)=nullptr;}}
+
+// # math관련 #
+#define _USE_MATH_DEFINES
+//각도 -> 라디안
+#define DEGREE_TO_RADIAN(_dgr) (PI * (_dgr) / 180.0f )
+//라디안 -> 각도
+#define RADIAN_TO_DEGREE(_rdn) (PI / (_rdn) * 180.0f )
+#define PI 3.141592653f
+
 
 // # 전역 변수 #
 // extern : 다른 헤더, 혹은 cpp에서 변수를 공유하기 위해 사용한다.

@@ -67,9 +67,11 @@
 !!!관리자!!!
 윈도우프로시저를 캡슐화했으나 우리가 사용을 하긴 해야함. 그래서 꺼내다쓸 상속받은MG를 생성했고,
 관리자권한과 시동코드를 MG에 부여해서 필요할 때 Node를 발동시킬 수 있게 하는 것.
-
-
 */
+
+// 전역변수
+static GImage* _backBuffer = IMAGEMANAGER->addImage("backBuffer", WINSIZE_X, WINSIZE_Y);
+
 class GameNode
 {
 
@@ -79,14 +81,27 @@ class GameNode
 	//	추상클래스의 자식클래스를 통해 인스턴스를 생성한다.
 	//멤버 변수, 일반 멤버함수 포함여부와 상관없이 순수가상함수를 1개이상 가지고있다면 순수가상함수.
 	//순수가상함수로만 이루어짐 : 인터페이스
+private : 
+	HDC _hdc;
+	bool _managerInit;
+
 public:
 	//함수가 성공적으로 실행되었는지 체크
 	//32비트 wjdtn(음수가 아닌 값은 성공, 음수 실패)
 	virtual HRESULT init(void);
+	virtual HRESULT init(bool managerInit);
 	virtual void release(void);
 	virtual void update(void);
-	virtual void render(HDC hdc);
+	virtual void render(void);
+	//virtual void render(HDC hdc);
 
+	GImage* getBackBuffer(void) { return _backBuffer; }
+
+	//메모리DC얻기
+	HDC getMemDC() { return _backBuffer->getMemDC(); }
+	//HDC얻기(화면DC)
+	HDC getHDC() { return _hdc; }
+	
 	//메인프로시저
 	//lresult callback의 반환으로 많이 사용됨
 	//메세지 처리를 마친 후 os에게 신호를 주기 위한 값
@@ -94,9 +109,10 @@ public:
 	//	0을 반환하면 모든 메세지가 처리되었다는 의미.
 	LRESULT MainProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam);
 
-	//순수가상함수
-	//부모클래스에서 순수가상함수를 선언한다면 자식클래스에서는 반드시 재정의한 함수를 멤버로 가지고있어야한다.
-	/*	ㄴ 만드는 법
+	/*
+	<순수가상함수>
+	부모클래스에서 순수가상함수를 선언한다면 자식클래스에서는 반드시 재정의한 함수를 멤버로 가지고있어야한다.
+		ㄴ 만드는 법
 	virtual void IFunctionA() = 0;
 	virtual void IFunctionB() = NULL;
 	virtual void IFunctionC() PURE;
@@ -139,8 +155,8 @@ public: virtual void idle();
 	*/
 
 	GameNode() {};
+
 	//가상소멸자!
-	//상속받는 애들도 같이 파괴괴괵
 	virtual ~GameNode() {};
 };
 

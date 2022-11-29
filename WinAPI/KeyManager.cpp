@@ -22,16 +22,18 @@ GetAsyncKeyState
 */
 //AND연산~ : "비트단위"로 and연산을 수행한다. 둘 다 1일때만 결과가 1이고, 아니라면 0이다.
 
-    if (GetAsyncKeyState(key) & 0x8000) {
-        if (this->getKeyDown()[key]) {
+    if (GetAsyncKeyState(key) & 0x8000) 
+    {
+        if (!this->getKeyDown()[key]) {
             this->setKeyDown(key, true);
             return true;
         }
     }
     else this->setKeyDown(key, false);
+    return false;
 }
 
-bool KeyManager::inOnceKeyUp(int key)
+bool KeyManager::isOnceKeyUp(int key)
 {
     if (GetAsyncKeyState(key) & 0x8000) {
         this->setKeyUp(key, true);

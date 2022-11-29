@@ -20,7 +20,7 @@ public:
 	//키가 한번 눌렸는지
 	bool isOnceKeyDown(int key);
 	//한번 누르고 띠었는지
-	bool inOnceKeyUp(int key);
+	bool isOnceKeyUp(int key);
 	//키가 계속 눌려있는지
 	bool isStayKeyDown(int key);
 	//토글키 - 누르면 상태가 유지되는

@@ -64,6 +64,10 @@ inline void EllipseMakeCenter(HDC hdc, int centerX, int centerY, int halfWidth, 
 	Ellipse(hdc, centerX - halfWidth, centerY - halfHeight, centerX + halfWidth, centerY + halfHeight);
 }
 
+//타원 그리기 (일립스, 중점포인트와 반지름)
+inline void EllipseMakeCenter(HDC hdc, POINT center, int halfWidth, int halfHeight) {
+	Ellipse(hdc, center.x - halfWidth, center.y - halfHeight, center.x + halfWidth, center.y + halfHeight);
+}
 
 
 // 
@@ -71,11 +75,15 @@ inline void EllipseMakeCenter(HDC hdc, int centerX, int centerY, int halfWidth, 
 // 
 
 //포인트 2개 거리비교
-inline void PointDistance(POINT pt1, POINT pt2) {
-
+inline float DistancePtoPow(POINT pt1, POINT pt2) {
+	return (pt2.x - pt1.x) * (pt2.x - pt1.x) + (pt2.y - pt1.y) * (pt2.y - pt1.y);
 }
 
-//두 RECT가 겹친 부분이 있는지 판단하기 (딱 만나도 true)
+inline float SlopPtoP(POINT pt1, POINT pt2) {
+	return ((float)pt2.y - pt1.y) / ((float)pt2.x - pt1.x);
+}
+
+//두 RECT가 겹친 부분이 있는지 판단하기 (딱 만나도 true)  아이거이미함수있음;
 inline bool RectOverlapRect(RECT rc1, RECT rc2)
 {
 	int x = (rc1.right - rc2.left) >= 0 ? (rc1.right - rc2.left) : -(rc1.right - rc2.left);
@@ -85,6 +93,23 @@ inline bool RectOverlapRect(RECT rc1, RECT rc2)
 
 	if ((x <= width) && (y <= height)) return true;
 	else return false;	
+}
+
+//rect구조체 움직이기
+inline void MoveRect(RECT rc, int moveRow,int moveColumn ) {
+	rc.left += moveRow;
+	rc.right+= moveRow;
+	rc.top += moveColumn;
+	rc.bottom += moveColumn;
+}
+//원본은 안움직이고 새 RECT를 반환하기
+inline RECT RectMoveReturn(RECT rc, int moveRow, int moveColumn) {
+	RECT tmp = rc;
+	tmp.left += moveRow;
+	tmp.right += moveRow;
+	tmp.top += moveColumn;
+	tmp.bottom += moveColumn;
+	return tmp;
 }
 
 
@@ -119,4 +144,16 @@ inline bool PointInRect(POINT pt,int boxStartX, int boxStartY, int width, int he
 inline bool PointInRect(POINT pt, POINT boxStart, int width, int height) {
 	if ((boxStart.x < pt.x) && (pt.x < boxStart.x + width) && (boxStart.y < pt.y) && (pt.y < boxStart.y + height))	return true;
 	else return false;
+}
+
+//포인트가 원(중심점과 거리) 안에 있는지
+inline bool PtInCircle(POINT pt, POINT centerCircle, int radiusCircle) {
+	//피타고라스
+	if (pow(centerCircle.x - pt.x, 2) + pow(centerCircle.y - pt.y, 2)
+	> pow(radiusCircle, 2))
+		return true;
+	else return false;
+
+	//삼각함수를 쓰려면 역탄젠트, 역코사인등등이 들어가야하는데,
+	//각이 4개도출돼서 경우의 수 지정해야하므로 번거로우니 버린다.	
 }

@@ -40,6 +40,27 @@
     <Filter Include="HomeWork\MainGame_16">
       <UniqueIdentifier>{1e9bad04-d411-4250-b154-333b04d6edf6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HomeWork\AvoidPoo">
+      <UniqueIdentifier>{4cd13e1f-48bf-44d7-b6f9-c2825d9a5ed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HomeWork\1124 점프 벽잡기">
+      <UniqueIdentifier>{f00f333f-4a53-4f42-a4bc-30baf9289c43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\Image">
+      <UniqueIdentifier>{9e73a969-f93b-4a52-8a42-41f812e5d88e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\1-25. 삼각함수">
+      <UniqueIdentifier>{b13504d2-b028-4614-aa5a-c410ab6adb94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HomeWork\1125 시계">
+      <UniqueIdentifier>{1d61ce84-2525-468a-bc22-8b383810a37a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HomeWork\1125 발사하기%28포신, 동그랗게%29">
+      <UniqueIdentifier>{036d81cb-794f-4998-ae62-05ce67973371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HomeWork\1125 발사하기%28중력, 충돌%29">
+      <UniqueIdentifier>{d7b70a86-b161-40b4-a3ac-9395525a34f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C3DMatrix.cpp">
@@ -51,15 +72,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>API FrameWork\PCH</Filter>
     </ClCompile>
-    <ClCompile Include="Rect_.cpp">
-      <Filter>HomeWork\1113 마우스</Filter>
-    </ClCompile>
-    <ClCompile Include="WinMain1114.cpp">
-      <Filter>HomeWork\1113 마우스</Filter>
-    </ClCompile>
-    <ClCompile Include="WinMain1115.cpp">
-      <Filter>HomeWork\1115 다각형</Filter>
-    </ClCompile>
     <ClCompile Include="GameNode.cpp">
       <Filter>API FrameWork\GameCore</Filter>
     </ClCompile>
@@ -69,15 +81,51 @@
     <ClCompile Include="MainGame.cpp">
       <Filter>MainGame</Filter>
     </ClCompile>
-    <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="KeyManager.cpp">
       <Filter>API FrameWork\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Game_ClayShooting.cpp">
+    <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="ShootingGame.cpp">
+      <Filter>Lesson</Filter>
+    </ClCompile>
+    <ClCompile Include="homework\AvoidPoo.cpp">
+      <Filter>HomeWork\AvoidPoo</Filter>
+    </ClCompile>
+    <ClCompile Include="homework\Poo.cpp">
+      <Filter>HomeWork\AvoidPoo</Filter>
+    </ClCompile>
+    <ClCompile Include="homework\Rect_.cpp">
+      <Filter>HomeWork\1113 마우스</Filter>
+    </ClCompile>
+    <ClCompile Include="homework\ClayShutting.cpp">
       <Filter>HomeWork\MainGame_16</Filter>
     </ClCompile>
-    <ClCompile Include="똥피하기.cpp">
-      <Filter>HomeWork</Filter>
+    <ClCompile Include="homework\WinMain1115.cpp">
+      <Filter>HomeWork\1115 다각형</Filter>
+    </ClCompile>
+    <ClCompile Include="GImage.cpp">
+      <Filter>API FrameWork\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame_jump.cpp">
+      <Filter>HomeWork\1124 점프 벽잡기</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame_triFunction.cpp">
+      <Filter>Lesson\1-25. 삼각함수</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame1125_timer.cpp">
+      <Filter>HomeWork\1125 시계</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame1125_ShootCannon.cpp">
+      <Filter>HomeWork\1125 발사하기%28포신, 동그랗게%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>API FrameWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame1125_gravityCrash.cpp">
+      <Filter>HomeWork\1125 발사하기%28중력, 충돌%29</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMainGame.cpp">
+      <Filter>MainGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,17 +146,8 @@
     <ClInclude Include="stdafx.h">
       <Filter>API FrameWork\PCH</Filter>
     </ClInclude>
-    <ClInclude Include="Rect_.h">
-      <Filter>HomeWork\1113 마우스</Filter>
-    </ClInclude>
     <ClInclude Include="SingletonBase.h">
       <Filter>API FrameWork\DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="RandomPolygon.h">
-      <Filter>HomeWork\1115 다각형</Filter>
-    </ClInclude>
-    <ClInclude Include="Draw.h">
-      <Filter>HomeWork\1115 다각형</Filter>
     </ClInclude>
     <ClInclude Include="GameNode.h">
       <Filter>API FrameWork\GameCore</Filter>
@@ -119,23 +158,62 @@
     <ClInclude Include="MainGame.h">
       <Filter>MainGame</Filter>
     </ClInclude>
-    <ClInclude Include="KeyManager.h">
-      <Filter>API FrameWork\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Game_ClayShooting.h">
-      <Filter>HomeWork\MainGame_16</Filter>
-    </ClInclude>
     <ClInclude Include="CommonMacroFunction.h">
       <Filter>API FrameWork\Utility</Filter>
     </ClInclude>
     <ClInclude Include="RandomFunction.h">
       <Filter>API FrameWork\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="두더지잡기.h">
+    <ClInclude Include="hitMole.h">
       <Filter>Lesson</Filter>
     </ClInclude>
-    <ClInclude Include="똥피하기.h">
-      <Filter>HomeWork</Filter>
+    <ClInclude Include="ShootingGame.h">
+      <Filter>Lesson</Filter>
+    </ClInclude>
+    <ClInclude Include="homework\AvoidPoo.h">
+      <Filter>HomeWork\AvoidPoo</Filter>
+    </ClInclude>
+    <ClInclude Include="homework\Poo.h">
+      <Filter>HomeWork\AvoidPoo</Filter>
+    </ClInclude>
+    <ClInclude Include="homework\Rect_.h">
+      <Filter>HomeWork\1113 마우스</Filter>
+    </ClInclude>
+    <ClInclude Include="homework\ClayShutting.h">
+      <Filter>HomeWork\MainGame_16</Filter>
+    </ClInclude>
+    <ClInclude Include="homework\Draw.h">
+      <Filter>HomeWork\1115 다각형</Filter>
+    </ClInclude>
+    <ClInclude Include="homework\RandomPolygon.h">
+      <Filter>HomeWork\1115 다각형</Filter>
+    </ClInclude>
+    <ClInclude Include="GImage.h">
+      <Filter>API FrameWork\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame_jump.h">
+      <Filter>HomeWork\1124 점프 벽잡기</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>API FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame_triFunction.h">
+      <Filter>Lesson\1-25. 삼각함수</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame1125_timer.h">
+      <Filter>HomeWork\1125 시계</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame1125_ShootCannon.h">
+      <Filter>HomeWork\1125 발사하기%28포신, 동그랗게%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>API FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame1125_gravityCrash.h">
+      <Filter>HomeWork\1125 발사하기%28중력, 충돌%29</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMainGame.h">
+      <Filter>MainGame</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
