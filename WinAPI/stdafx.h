@@ -84,7 +84,7 @@ using std::map;
 using std::string;
 using std::bitset;
 
-//#include <cassert>	//추후 설명해주세요
+#include <cassert>	//추후 설명해주세요
 
 
 /*
@@ -142,7 +142,7 @@ ID2D1HwndRenderTarget*	_ID2DRenderTarget = nullptr;
 #else
 #define WIN_NAME	(LPSTR)(TEXT("WindowsAPI"))
 #define WINSTART_X	400
-#define WINSTART_Y	100
+#define WINSTART_Y	0
 #define WINSIZE_X	1280
 #define WINSIZE_Y	800
 
