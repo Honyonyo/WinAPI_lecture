@@ -61,6 +61,15 @@
     <Filter Include="HomeWork\1125 발사하기%28중력, 충돌%29">
       <UniqueIdentifier>{d7b70a86-b161-40b4-a3ac-9395525a34f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HomeWork\1129 자동차">
+      <UniqueIdentifier>{b78b758b-fec6-4b5a-ae62-49d01581c83c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\ExampleClasses">
+      <UniqueIdentifier>{7bc39614-dce5-4f43-b630-5944a715a5d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\ExampleClasses\Scene">
+      <UniqueIdentifier>{a260edb8-833a-4c75-bff3-603c76d4e6e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C3DMatrix.cpp">
@@ -126,6 +135,18 @@
     </ClCompile>
     <ClCompile Include="MainMainGame.cpp">
       <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="CarRush.cpp">
+      <Filter>HomeWork\1129 자동차</Filter>
+    </ClCompile>
+    <ClCompile Include="FontManager.cpp">
+      <Filter>API FrameWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="SecondScene.cpp">
+      <Filter>API FrameWork\ExampleClasses\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>API FrameWork\ExampleClasses\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +235,18 @@
     </ClInclude>
     <ClInclude Include="MainMainGame.h">
       <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="CarRush.h">
+      <Filter>HomeWork\1129 자동차</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>API FrameWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondScene.h">
+      <Filter>API FrameWork\ExampleClasses\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>API FrameWork\ExampleClasses\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
